@@ -1,0 +1,107 @@
+Baik, kita masuk ke Tahap Kesepuluh: Memahami Ajax dan Fetch API untuk melakukan permintaan HTTP di JavaScript.
+
+Ajax (Asynchronous JavaScript and XML) adalah teknik yang memungkinkan halaman web untuk memperbarui konten tanpa perlu memuat ulang seluruh halaman. Dengan Ajax, kita dapat mengambil data dari server dan mengupdate bagian-bagian tertentu dari halaman.
+
+Fetch API adalah cara modern untuk melakukan permintaan jaringan yang menggantikan XMLHttpRequest. Fetch API berbasis Promise, sehingga lebih mudah digunakan dengan kode asynchronous.
+
+Langkah 32: Menggunakan Fetch API
+
+Dengan Fetch API, kita dapat melakukan permintaan ke server dan mengambil data.
+
+Contoh Mengambil Data dengan Fetch:
+
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json(); // Mengubah response menjadi JSON
+    })
+    .then(data => {
+        console.log(data); // Menampilkan data yang diambil
+    })
+    .catch(error => {
+        console.error('Ada masalah dengan fetch operation:', error);
+    });
+
+Langkah 33: Mengirim Data dengan Fetch
+
+Kita juga bisa mengirim data ke server menggunakan metode POST.
+
+Contoh Mengirim Data dengan Fetch:
+
+let postData = {
+    title: 'Judul Baru',
+    body: 'Isi konten baru.',
+    userId: 1
+};
+
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(postData) // Mengonversi objek menjadi string JSON
+})
+    .then(response => response.json())
+    .then(data => {
+        console.log('Data yang baru ditambahkan:', data);
+    })
+    .catch(error => {
+        console.error('Ada masalah dengan fetch operation:', error);
+    });
+
+Langkah 34: Menggunakan Async/Await dengan Fetch
+
+Kita bisa menggunakan async/await untuk membuat kode lebih bersih dan mudah dibaca.
+
+Contoh Menggunakan Async/Await:
+
+async function ambilData() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Ada masalah dengan fetch operation:', error);
+    }
+}
+
+ambilData();
+
+Langkah 35: Menghapus Data dengan Fetch
+
+Kita juga bisa menghapus data dengan Fetch API menggunakan metode DELETE.
+
+Contoh Menghapus Data:
+
+fetch('https://jsonplaceholder.typicode.com/posts/1', {
+    method: 'DELETE'
+})
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        console.log('Data berhasil dihapus');
+    })
+    .catch(error => {
+        console.error('Ada masalah dengan fetch operation:', error);
+    });
+
+Latihan:
+
+1. Buat aplikasi sederhana yang menggunakan Fetch API untuk mengambil data dari API publik (misalnya, https://jsonplaceholder.typicode.com/posts) dan menampilkannya di halaman web.
+
+
+2. Tambahkan form untuk menambah data baru ke API menggunakan metode POST.
+
+
+3. Coba buat fungsi untuk menghapus data berdasarkan ID dengan metode DELETE.
+
+
+
+Jika Anda sudah siap, kita bisa melanjutkan ke tahap berikutnya atau tanyakan jika ada yang belum jelas!
+
