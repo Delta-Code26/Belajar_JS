@@ -1,0 +1,95 @@
+Perulangan memungkinkan kita menjalankan kode yang sama berkali-kali. Ini berguna saat kita perlu melakukan tindakan berulang kali berdasarkan kondisi tertentu, seperti mencetak angka atau memproses data dalam daftar.
+
+Langkah 8: Perulangan dengan for
+
+for loop adalah perulangan yang biasanya digunakan ketika kita tahu berapa kali perulangan akan dijalankan.
+
+Sintaks dasar:
+
+for (let i = 0; i < 5; i++) {
+    console.log("Perulangan ke-", i);
+}
+
+let i = 0; adalah inisialisasi variabel i sebagai penghitung.
+
+i < 5; adalah kondisi perulangan. Selama i kurang dari 5, perulangan akan terus berjalan.
+
+i++ adalah penambahan i setiap kali perulangan selesai.
+
+
+Contoh:
+
+for (let i = 1; i <= 10; i++) {
+    console.log("Angka:", i);
+}
+
+Langkah 9: Perulangan dengan while
+
+while loop akan terus berjalan selama kondisinya true. Loop ini cocok digunakan jika kita tidak tahu pasti berapa kali perulangan akan terjadi.
+
+Sintaks dasar:
+
+let j = 0;
+
+while (j < 5) {
+    console.log("Perulangan ke-", j);
+    j++;
+}
+
+Pada contoh ini, perulangan akan terus berjalan hingga j mencapai 5.
+
+Langkah 10: Perulangan dengan do...while
+
+do...while mirip dengan while, tetapi dijalankan setidaknya satu kali karena kondisi diperiksa setelah menjalankan blok kode.
+
+Sintaks dasar:
+
+let k = 0;
+
+do {
+    console.log("Perulangan ke-", k);
+    k++;
+} while (k < 5);
+
+Langkah 11: for...of untuk Array
+
+for...of loop digunakan untuk mengulangi elemen dalam array. Ini memudahkan kita mengakses setiap elemen satu per satu.
+
+Contoh:
+
+let buah = ["apel", "mangga", "pisang"];
+
+for (let b of buah) {
+    console.log(b);
+}
+
+Output:
+
+apel
+mangga
+pisang
+
+Langkah 12: for...in untuk Properti Objek
+
+for...in digunakan untuk mengulangi properti dalam sebuah objek.
+
+Contoh:
+
+let siswa = { nama: "Andi", umur: 17, kelas: "12A" };
+
+for (let prop in siswa) {
+    console.log(prop + ": " + siswa[prop]);
+}
+
+Output:
+
+nama: Andi
+umur: 17
+kelas: 12A
+
+Latihan:
+
+Cobalah membuat perulangan untuk menampilkan angka dari 1 hingga 10, lalu coba juga perulangan for...of dengan array berisi nama-nama buah atau benda lainnya.
+
+Apakah Anda siap lanjut ke tahap berikutnya atau ada yang ingin ditanyakan?
+
