@@ -1,0 +1,102 @@
+Baik, kita masuk ke Tahap Kedelapan: Memahami Manipulasi DOM (Document Object Model) di JavaScript.
+
+DOM adalah representasi struktur halaman web, yang memungkinkan JavaScript untuk mengakses dan mengubah konten, struktur, serta gaya elemen pada halaman.
+
+Langkah 24: Mengakses Elemen DOM
+
+Untuk memanipulasi elemen HTML, kita harus mengaksesnya terlebih dahulu. Ada beberapa metode untuk mengakses elemen DOM:
+
+1. getElementById: Mengakses elemen berdasarkan ID.
+
+let judul = document.getElementById("judul");
+console.log(judul);
+
+
+2. getElementsByClassName: Mengakses elemen berdasarkan kelas.
+
+let items = document.getElementsByClassName("item");
+console.log(items); // Menghasilkan HTMLCollection
+
+
+3. getElementsByTagName: Mengakses elemen berdasarkan nama tag.
+
+let paragraf = document.getElementsByTagName("p");
+console.log(paragraf); // Menghasilkan HTMLCollection
+
+
+4. querySelector dan querySelectorAll: Mengakses elemen berdasarkan selector CSS. querySelector hanya mengembalikan elemen pertama yang cocok, sedangkan querySelectorAll mengembalikan semua elemen yang cocok.
+
+let pertama = document.querySelector(".item");
+let semuaItem = document.querySelectorAll(".item");
+console.log(pertama);
+console.log(semuaItem); // Menghasilkan NodeList
+
+
+
+Langkah 25: Mengubah Konten dan Properti Elemen
+
+Setelah mengakses elemen, kita dapat mengubah kontennya menggunakan textContent atau innerHTML.
+
+Mengubah Teks dengan textContent:
+
+let judul = document.getElementById("judul");
+judul.textContent = "Judul Baru";
+
+Mengubah HTML dengan innerHTML:
+
+let konten = document.getElementById("konten");
+konten.innerHTML = "<strong>Ini konten baru dengan HTML!</strong>";
+
+
+Langkah 26: Mengubah Gaya Elemen
+
+Kita bisa mengubah gaya elemen dengan properti .style. Setiap properti CSS yang ingin diubah harus ditulis dalam bentuk camelCase.
+
+Contoh:
+
+let judul = document.getElementById("judul");
+judul.style.color = "blue";
+judul.style.fontSize = "24px";
+
+Langkah 27: Menambah dan Menghapus Elemen
+
+JavaScript memungkinkan kita untuk menambah dan menghapus elemen dari DOM.
+
+Menambah Elemen dengan createElement dan appendChild:
+
+let list = document.getElementById("list");
+let itemBaru = document.createElement("li");
+itemBaru.textContent = "Item Baru";
+list.appendChild(itemBaru);
+
+Menghapus Elemen dengan removeChild:
+
+list.removeChild(itemBaru); // Menghapus itemBaru dari list
+
+
+Langkah 28: Event Handling
+
+Event handling adalah cara JavaScript merespons interaksi pengguna, seperti klik, hover, atau input. Kita bisa menambahkan event listener untuk menjalankan fungsi saat event terjadi.
+
+Contoh: Menambahkan Event Listener
+
+<button id="tombol">Klik Saya</button>
+
+<script>
+    let tombol = document.getElementById("tombol");
+    tombol.addEventListener("click", function() {
+        alert("Tombol diklik!");
+    });
+</script>
+
+Latihan:
+
+1. Buat HTML sederhana dengan beberapa elemen, seperti paragraf dan tombol. Ubah teks paragraf saat tombol diklik.
+
+
+2. Buat daftar dengan beberapa item, lalu tambahkan elemen baru ke daftar menggunakan JavaScript.
+
+
+
+Jika sudah memahami konsep ini, kita bisa lanjut ke tahap berikutnya atau tanyakan jika ada yang belum jelas!
+
