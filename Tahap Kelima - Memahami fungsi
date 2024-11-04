@@ -1,0 +1,101 @@
+Kelima: Memahami Fungsi (Functions) di JavaScript.
+
+Fungsi adalah blok kode yang dirancang untuk melakukan tugas tertentu dan bisa dipanggil berkali-kali. Dengan fungsi, kita dapat mengorganisir kode agar lebih rapi, mudah dibaca, dan dapat digunakan kembali.
+
+Langkah 13: Membuat Fungsi Sederhana
+
+Untuk mendefinisikan fungsi, kita menggunakan kata kunci function, diikuti dengan nama fungsi, dan tanda kurung () yang mungkin berisi parameter.
+
+Sintaks dasar:
+
+function namaFungsi() {
+    // kode yang akan dijalankan
+}
+
+Contoh:
+
+function sapa() {
+    console.log("Halo, selamat datang!");
+}
+
+// Memanggil fungsi
+sapa(); // Output: Halo, selamat datang!
+
+Langkah 14: Fungsi dengan Parameter
+
+Parameter adalah variabel yang dapat kita berikan ke fungsi untuk memproses data tertentu. Saat memanggil fungsi, kita bisa memberikan nilai pada parameter tersebut.
+
+Contoh:
+
+function sapaPengguna(nama) {
+    console.log("Halo, " + nama + "!");
+}
+
+sapaPengguna("Andi"); // Output: Halo, Andi!
+sapaPengguna("Budi"); // Output: Halo, Budi!
+
+Langkah 15: Fungsi dengan Return Value
+
+Fungsi juga bisa mengembalikan nilai menggunakan kata kunci return. Nilai yang dikembalikan bisa kita simpan di variabel atau langsung digunakan.
+
+Contoh:
+
+function tambah(a, b) {
+    return a + b;
+}
+
+let hasil = tambah(5, 3);
+console.log(hasil); // Output: 8
+
+Dalam contoh ini, fungsi tambah menerima dua parameter (a dan b), lalu mengembalikan hasil penjumlahannya.
+
+Langkah 16: Fungsi Anonim dan Arrow Function
+
+Fungsi anonim adalah fungsi yang tidak memiliki nama dan biasanya disimpan dalam variabel. Sedangkan arrow function adalah cara singkat untuk menuliskan fungsi.
+
+Fungsi Anonim:
+
+let kali = function(a, b) {
+    return a * b;
+};
+
+console.log(kali(4, 5)); // Output: 20
+
+Arrow Function:
+
+let bagi = (a, b) => a / b;
+
+console.log(bagi(10, 2)); // Output: 5
+
+Langkah 17: Scope (Lingkup Variabel) pada Fungsi
+
+Setiap variabel yang dideklarasikan di dalam fungsi hanya bisa diakses di dalam fungsi tersebut. Ini disebut local scope. Variabel yang dideklarasikan di luar fungsi adalah global scope.
+
+Contoh:
+
+let nama = "Budi"; // Global scope
+
+function perkenalan() {
+    let nama = "Andi"; // Local scope
+    console.log("Halo, " + nama);
+}
+
+perkenalan(); // Output: Halo, Andi
+console.log(nama); // Output: Budi
+
+Latihan:
+
+Cobalah membuat beberapa fungsi:
+
+1. Fungsi untuk menjumlahkan dua angka.
+
+
+2. Fungsi yang menerima nama dan umur, lalu menampilkan pesan seperti "Halo, [nama], umur Anda adalah [umur]."
+
+
+3. Fungsi menggunakan arrow function untuk mengalikan dua angka.
+
+
+
+Apakah Anda ingin melanjutkan ke tahap berikutnya atau ada yang ingin ditanyakan di sini?
+
