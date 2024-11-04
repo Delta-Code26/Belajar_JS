@@ -1,0 +1,92 @@
+Baik, kita lanjut ke Tahap Keenam: Memahami Array dan Objek di JavaScript.
+
+Langkah 18: Array
+
+Array adalah struktur data yang digunakan untuk menyimpan beberapa nilai dalam satu variabel. Setiap elemen dalam array memiliki indeks, dimulai dari 0.
+
+Cara Membuat Array:
+
+let buah = ["apel", "mangga", "pisang"];
+console.log(buah);
+
+Mengakses Elemen Array: Kita dapat mengakses elemen array dengan menggunakan indeksnya.
+
+console.log(buah[0]); // Output: apel
+console.log(buah[2]); // Output: pisang
+
+Menambah Elemen ke Array:
+
+buah.push("jeruk");
+console.log(buah); // Output: ["apel", "mangga", "pisang", "jeruk"]
+
+Metode Array yang Umum:
+
+push(): Menambah elemen ke akhir array.
+
+pop(): Menghapus elemen terakhir dari array.
+
+shift(): Menghapus elemen pertama dari array.
+
+unshift(): Menambah elemen ke awal array.
+
+length: Mendapatkan jumlah elemen dalam array.
+
+
+Contoh:
+
+buah.pop(); // Menghapus "jeruk"
+console.log(buah.length); // Output: 3
+
+Langkah 19: Objek
+
+Objek adalah koleksi data yang terdiri dari key (kunci) dan value (nilai). Objek memungkinkan kita menyimpan data dalam bentuk pasangan nama-nilai yang lebih terstruktur.
+
+Cara Membuat Objek:
+
+let mahasiswa = {
+    nama: "Andi",
+    umur: 20,
+    jurusan: "Teknik Informatika"
+};
+
+Mengakses Properti Objek: Kita bisa mengakses properti objek menggunakan dot notation atau bracket notation.
+
+console.log(mahasiswa.nama); // Output: Andi
+console.log(mahasiswa["umur"]); // Output: 20
+
+Menambah atau Mengubah Properti:
+
+mahasiswa.umur = 21; // Mengubah nilai umur
+mahasiswa.alamat = "Jakarta"; // Menambah properti baru
+console.log(mahasiswa);
+
+Langkah 20: Array of Objects
+
+Kita dapat membuat array yang berisi beberapa objek. Ini berguna saat kita ingin menyimpan data yang memiliki struktur serupa.
+
+Contoh:
+
+let siswa = [
+    { nama: "Andi", umur: 18 },
+    { nama: "Budi", umur: 20 },
+    { nama: "Cici", umur: 19 }
+];
+
+for (let s of siswa) {
+    console.log("Nama:", s.nama, "- Umur:", s.umur);
+}
+
+Latihan:
+
+1. Buat array yang berisi nama-nama hewan, lalu coba tambahkan, hapus, dan tampilkan elemen di dalamnya.
+
+
+2. Buat objek dengan data diri Anda, seperti nama, umur, dan hobi. Tambahkan properti baru, ubah salah satu nilainya, dan tampilkan hasilnya.
+
+
+3. Buat array of objects untuk menyimpan data siswa (nama dan nilai), lalu tampilkan setiap siswa menggunakan perulangan.
+
+
+
+Jika sudah siap, kita bisa lanjut ke tahap berikutnya atau tanyakan jika ada yang belum jelas!
+
