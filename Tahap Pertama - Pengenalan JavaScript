@@ -1,0 +1,65 @@
+Baik, mari kita mulai dari dasar JavaScript!
+
+Tahap Pertama: Pengenalan dan Dasar-Dasar JavaScript
+
+JavaScript adalah bahasa pemrograman yang digunakan untuk mengembangkan halaman web yang interaktif. Ini adalah bahasa yang berjalan di sisi klien (browser), jadi setiap kode JavaScript yang kita tulis dapat langsung dijalankan di dalam browser.
+
+Langkah 1: Menambahkan JavaScript ke Halaman HTML
+
+Untuk menulis JavaScript, kita bisa menyisipkannya langsung di dalam file HTML menggunakan tag <script>. Berikut contoh sederhana:
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belajar JavaScript</title>
+</head>
+<body>
+
+    <h1>Selamat Datang di JavaScript!</h1>
+
+    <script>
+        // Ini adalah komentar di JavaScript
+        console.log("Halo, dunia!"); // Cetak teks ke konsol
+    </script>
+
+</body>
+</html>
+
+console.log() adalah cara dasar untuk menampilkan pesan di konsol browser.
+
+Komentar: // digunakan untuk komentar satu baris, dan /* ... */ untuk komentar beberapa baris.
+
+
+Langkah 2: Variabel dan Tipe Data
+
+Di JavaScript, kita menggunakan variabel untuk menyimpan data. Ada tiga kata kunci untuk mendeklarasikan variabel:
+
+var: cara lama, jarang digunakan sekarang
+
+let: untuk variabel yang dapat diubah
+
+const: untuk variabel yang nilainya tetap
+
+
+Contoh penggunaan variabel:
+
+let nama = "Andi";      // Tipe data string
+const umur = 25;        // Tipe data number
+let isStudent = true;   // Tipe data boolean
+
+console.log(nama);
+console.log(umur);
+console.log(isStudent);
+
+String: Teks yang ditulis dalam tanda kutip.
+
+Number: Angka tanpa tanda kutip.
+
+Boolean: Hanya memiliki dua nilai: true atau false.
+
+
+Cobalah: Salin kode ini ke dalam tag <script> pada file HTML Anda, lalu buka di browser dan lihat hasilnya di Developer Console.
+
+Apakah ada yang ingin Anda tanyakan di tahap ini?
