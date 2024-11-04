@@ -1,0 +1,77 @@
+Sekarang kita masuk ke Tahap Kesembilan: Memahami Local Storage dan Session Storage di JavaScript.
+
+Local Storage dan Session Storage adalah dua cara yang dapat digunakan untuk menyimpan data secara lokal di browser. Perbedaan utama antara keduanya adalah:
+
+Local Storage: Data akan tetap tersimpan meskipun kita menutup dan membuka kembali browser.
+
+Session Storage: Data hanya tersimpan selama sesi browser aktif. Jika kita menutup tab atau jendela browser, data akan hilang.
+
+
+Langkah 29: Local Storage
+
+Local Storage memungkinkan kita menyimpan data dalam bentuk pasangan key-value di browser. Data ini bersifat persisten (tidak hilang ketika browser ditutup).
+
+Menyimpan Data ke Local Storage:
+
+localStorage.setItem("nama", "Andi");
+
+Mengambil Data dari Local Storage:
+
+let nama = localStorage.getItem("nama");
+console.log(nama); // Output: Andi
+
+Menghapus Data dari Local Storage:
+
+localStorage.removeItem("nama");
+
+Menghapus Semua Data di Local Storage:
+
+localStorage.clear();
+
+Langkah 30: Session Storage
+
+Session Storage mirip dengan Local Storage, tetapi data hanya bertahan selama sesi browser aktif.
+
+Menyimpan Data ke Session Storage:
+
+sessionStorage.setItem("nama", "Budi");
+
+Mengambil Data dari Session Storage:
+
+let nama = sessionStorage.getItem("nama");
+console.log(nama); // Output: Budi
+
+Menghapus Data dari Session Storage:
+
+sessionStorage.removeItem("nama");
+
+Menghapus Semua Data di Session Storage:
+
+sessionStorage.clear();
+
+Langkah 31: Menyimpan dan Mengambil Data yang Lebih Kompleks
+
+Local Storage dan Session Storage hanya mendukung tipe data string. Jika kita ingin menyimpan objek atau array, kita harus mengonversinya menjadi string JSON menggunakan JSON.stringify(), dan mengubahnya kembali ke objek menggunakan JSON.parse() saat mengambil data.
+
+Contoh Menyimpan Objek ke Local Storage:
+
+let user = { nama: "Cici", umur: 25 };
+localStorage.setItem("user", JSON.stringify(user));
+
+Contoh Mengambil Objek dari Local Storage:
+
+let dataUser = JSON.parse(localStorage.getItem("user"));
+console.log(dataUser.nama); // Output: Cici
+console.log(dataUser.umur); // Output: 25
+
+Latihan:
+
+1. Coba simpan nama pengguna di Local Storage, lalu tampilkan nama tersebut di halaman ketika pengguna kembali membuka halaman tersebut.
+
+
+2. Buat halaman dengan input form sederhana yang memungkinkan pengguna menyimpan catatan singkat ke Local Storage. Setiap kali halaman dibuka, catatan yang terakhir disimpan harus ditampilkan.
+
+
+
+Apakah Anda siap untuk melanjutkan ke tahap berikutnya, atau ada yang ingin ditanyakan mengenai materi ini?
+
