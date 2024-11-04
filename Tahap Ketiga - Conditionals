@@ -1,0 +1,89 @@
+Baik, kita lanjut ke Tahap Ketiga: Memahami Kondisi (Conditionals) di JavaScript.
+
+Langkah 5: Pernyataan Kondisional (if, else if, else)
+
+Pernyataan kondisional digunakan untuk menjalankan kode berdasarkan kondisi tertentu.
+
+1. if Statement
+
+Digunakan untuk menjalankan kode jika kondisi yang diberikan bernilai true.
+
+let umur = 18;
+
+if (umur >= 18) {
+    console.log("Anda sudah dewasa.");
+}
+
+2. if...else Statement
+
+Digunakan untuk memberikan alternatif aksi jika kondisi bernilai false.
+
+let umur = 16;
+
+if (umur >= 18) {
+    console.log("Anda sudah dewasa.");
+} else {
+    console.log("Anda masih di bawah umur.");
+}
+
+3. else if Statement
+
+Digunakan ketika ada lebih dari dua kemungkinan kondisi yang perlu diperiksa.
+
+let nilai = 75;
+
+if (nilai >= 90) {
+    console.log("Nilai Anda A");
+} else if (nilai >= 75) {
+    console.log("Nilai Anda B");
+} else if (nilai >= 60) {
+    console.log("Nilai Anda C");
+} else {
+    console.log("Nilai Anda D");
+}
+
+Pada contoh di atas, program akan memeriksa dari atas ke bawah dan menjalankan blok kode yang pertama kali bernilai true.
+
+Langkah 6: Ternary Operator
+
+Ternary operator adalah cara singkat untuk menuliskan if...else. Sintaksnya adalah:
+
+kondisi ? ekspresiJikaTrue : ekspresiJikaFalse;
+
+Contoh:
+
+let umur = 20;
+let status = (umur >= 18) ? "Dewasa" : "Anak-anak";
+console.log(status); // Output: Dewasa
+
+Langkah 7: Switch Statement
+
+switch adalah alternatif untuk if...else if...else ketika kita memiliki banyak kondisi berdasarkan satu variabel.
+
+let hari = "Senin";
+
+switch (hari) {
+    case "Senin":
+        console.log("Hari ini adalah hari Senin.");
+        break;
+    case "Selasa":
+        console.log("Hari ini adalah hari Selasa.");
+        break;
+    case "Rabu":
+        console.log("Hari ini adalah hari Rabu.");
+        break;
+    default:
+        console.log("Hari tidak diketahui.");
+}
+
+break digunakan untuk menghentikan eksekusi setelah menemukan kasus yang cocok.
+
+default dijalankan jika tidak ada kasus yang cocok.
+
+
+Latihan:
+
+Cobalah membuat kondisi di mana Anda bisa menggunakan if, else if, else, dan switch. Misalnya, menentukan status berdasarkan nilai atau umur.
+
+Jika sudah siap, kita bisa lanjut ke tahap berikutnya!
+
