@@ -1,0 +1,114 @@
+Langkah 3: Operator
+
+Operator digunakan untuk melakukan operasi pada nilai atau variabel. Ada beberapa jenis operator di JavaScript:
+
+1. Operator Aritmatika: Digunakan untuk operasi matematika dasar.
+
++ (penjumlahan)
+
+- (pengurangan)
+
+* (perkalian)
+
+/ (pembagian)
+
+% (modulus/sisa bagi)
+
+** (pangkat)
+
+
+Contoh:
+
+let a = 10;
+let b = 3;
+
+console.log(a + b); // 13
+console.log(a - b); // 7
+console.log(a * b); // 30
+console.log(a / b); // 3.3333
+console.log(a % b); // 1 (sisa bagi)
+console.log(a ** b); // 1000 (10 pangkat 3)
+
+
+2. Operator Penugasan: Digunakan untuk menetapkan nilai ke variabel.
+
+= (penugasan sederhana)
+
++= (penambahan dan penugasan)
+
+-= (pengurangan dan penugasan)
+
+*= (perkalian dan penugasan)
+
+/= (pembagian dan penugasan)
+
+
+Contoh:
+
+let c = 5;
+c += 3;  // Sama seperti c = c + 3
+console.log(c); // 8
+
+
+3. Operator Perbandingan: Digunakan untuk membandingkan dua nilai, menghasilkan true atau false.
+
+== (sama dengan)
+
+=== (identik, mengecek tipe data juga)
+
+!= (tidak sama dengan)
+
+!== (tidak identik)
+
+> (lebih besar dari)
+
+< (lebih kecil dari)
+
+>= (lebih besar atau sama dengan)
+
+<= (lebih kecil atau sama dengan)
+
+
+Contoh:
+
+let x = 10;
+let y = 5;
+
+console.log(x > y);   // true
+console.log(x == 10); // true
+console.log(x === "10"); // false, tipe data berbeda
+
+
+4. Operator Logika: Digunakan dalam kondisi logis.
+
+&& (dan/logical AND)
+
+|| (atau/logical OR)
+
+! (tidak/logical NOT)
+
+
+Contoh:
+
+let isAdult = true;
+let hasID = false;
+
+console.log(isAdult && hasID); // false (karena hasID adalah false)
+console.log(isAdult || hasID); // true (karena salah satu true)
+console.log(!isAdult); // false (kebalikan dari true)
+
+
+
+Langkah 4: Ekspresi
+
+Ekspresi adalah kombinasi dari variabel, nilai, dan operator yang menghasilkan nilai. Contoh ekspresi sederhana:
+
+let hasil = (10 + 5) * 2;  // Hasilnya adalah 30
+console.log(hasil);
+
+Latihan:
+
+Cobalah untuk mendeklarasikan beberapa variabel dan lakukan berbagai operasi menggunakan operator-operator di atas.
+
+Apakah Anda siap melanjutkan atau ada pertanyaan di tahap ini?
+
