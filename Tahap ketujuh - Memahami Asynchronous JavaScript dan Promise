@@ -1,0 +1,100 @@
+Sekarang kita masuk ke Tahap Ketujuh: Memahami Asynchronous JavaScript dan Promise di JavaScript.
+
+Asynchronous JavaScript sangat penting, terutama dalam hal menangani operasi yang memakan waktu, seperti pengambilan data dari server atau menunggu respons dari API. Ini memungkinkan program untuk melanjutkan tugas lain tanpa harus menunggu operasi yang lama selesai.
+
+Langkah 21: Callback
+
+Callback adalah fungsi yang dikirimkan sebagai argumen ke fungsi lain dan akan dieksekusi setelah tugas utama selesai. Ini adalah dasar dari asynchronous JavaScript.
+
+Contoh Callback:
+
+function prosesData(data, callback) {
+    console.log("Memproses data:", data);
+    callback();
+}
+
+function selesai() {
+    console.log("Proses selesai!");
+}
+
+prosesData("Data 1", selesai);
+
+Di sini, selesai adalah callback yang dipanggil setelah prosesData selesai dijalankan.
+
+Langkah 22: Promise
+
+Promise adalah objek yang mewakili operasi yang mungkin selesai di masa depan. Promise memiliki tiga status:
+
+Pending (menunggu): Saat Promise sedang dalam proses.
+
+Fulfilled (terpenuhi): Saat Promise berhasil diselesaikan.
+
+Rejected (gagal): Saat Promise gagal.
+
+
+Membuat dan Menggunakan Promise:
+
+let janji = new Promise((resolve, reject) => {
+    let sukses = true; // Ganti dengan `false` untuk melihat contoh gagal
+
+    if (sukses) {
+        resolve("Janji dipenuhi!");
+    } else {
+        reject("Janji tidak dipenuhi.");
+    }
+});
+
+janji
+    .then((pesan) => {
+        console.log(pesan); // Jika Promise terpenuhi
+    })
+    .catch((pesanError) => {
+        console.log(pesanError); // Jika Promise gagal
+    });
+
+resolve() dipanggil jika operasi berhasil.
+
+reject() dipanggil jika operasi gagal.
+
+
+Langkah 23: async dan await
+
+async dan await adalah cara yang lebih modern dan bersih untuk menangani asynchronous code dibandingkan dengan callback atau .then() dalam Promise. Dengan async dan await, kita bisa menulis kode asynchronous yang terlihat seperti kode synchronous.
+
+async: Digunakan sebelum deklarasi fungsi untuk menandai bahwa fungsi tersebut mengandung kode asynchronous.
+
+await: Digunakan untuk menunggu Promise selesai sebelum melanjutkan ke kode berikutnya.
+
+
+Contoh Menggunakan async dan await:
+
+function ambilData() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve("Data berhasil diambil!");
+        }, 2000); // Simulasi jeda 2 detik
+    });
+}
+
+async function prosesData() {
+    console.log("Mengambil data...");
+    let data = await ambilData(); // Menunggu sampai data selesai diambil
+    console.log(data);
+    console.log("Proses selesai.");
+}
+
+prosesData();
+
+Di sini, ambilData adalah fungsi yang mengembalikan Promise. Fungsi prosesData menunggu (await) ambilData selesai sebelum melanjutkan.
+
+Latihan:
+
+1. Buat Promise yang menyimulasikan pengecekan apakah suatu angka adalah genap atau ganjil, lalu tampilkan hasilnya menggunakan .then() dan .catch().
+
+
+2. Coba buat fungsi async yang menunggu Promise dengan jeda beberapa detik, lalu cetak pesan saat Promise selesai.
+
+
+
+Jika sudah memahami, kita bisa lanjut ke tahap berikutnya atau tanya jika ada yang belum jelas!
+
