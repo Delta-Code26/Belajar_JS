@@ -1,0 +1,78 @@
+DOM (Document Object Model) adalah representasi struktur dokumen HTML yang memungkinkan kita untuk mengakses dan memodifikasi elemen-elemen dalam halaman web. Dengan manipulasi DOM, kita dapat menambahkan, mengubah, dan menghapus elemen serta konten di dalam halaman.
+
+### Langkah 84: Mengakses Elemen DOM
+Untuk mulai memanipulasi DOM, kita perlu mengakses elemen di dalam halaman. Kita dapat menggunakan berbagai metode seperti `getElementById()`, `getElementsByClassName()`, dan `querySelector()`.
+
+Contoh Mengakses Elemen dengan querySelector:
+===============================================================================================================
+// Mengakses elemen dengan ID
+const heading = document.querySelector("#myHeading");
+
+// Mengakses elemen dengan class
+const items = document.querySelectorAll(".item");
+===============================================================================================================
+
+### Langkah 85: Mengubah Konten Elemen
+Setelah kita mengakses elemen, kita dapat mengubah kontennya menggunakan properti `textContent` atau `innerHTML`.
+
+Contoh Mengubah Konten:
+===============================================================================================================
+heading.textContent = "Judul Baru"; // Mengubah teks heading
+===============================================================================================================
+
+### Langkah 86: Mengubah Gaya Elemen
+Kita juga bisa mengubah gaya CSS elemen menggunakan properti `style`.
+
+Contoh Mengubah Gaya:
+===============================================================================================================
+heading.style.color = "blue"; // Mengubah warna teks menjadi biru
+heading.style.fontSize = "24px"; // Mengubah ukuran font
+===============================================================================================================
+
+### Langkah 87: Menambahkan Elemen Baru
+Kita bisa membuat elemen baru dan menambahkannya ke dalam DOM menggunakan metode `createElement()` dan `appendChild()`.
+
+Contoh Menambahkan Elemen Baru:
+===============================================================================================================
+const newItem = document.createElement("li"); // Membuat elemen list baru
+newItem.textContent = "Item Baru"; // Menambahkan konten ke elemen
+const list = document.querySelector("#myList"); // Mengakses elemen list
+list.appendChild(newItem); // Menambahkan item baru ke list
+===============================================================================================================
+
+### Langkah 88: Menghapus Elemen
+Kita juga bisa menghapus elemen dari DOM menggunakan metode `remove()` atau `removeChild()`.
+
+Contoh Menghapus Elemen:
+===============================================================================================================
+const itemToRemove = document.querySelector(".item"); // Mengakses item yang ingin dihapus
+itemToRemove.remove(); // Menghapus item
+===============================================================================================================
+
+### Langkah 89: Menggunakan Event untuk Manipulasi DOM
+Kita bisa mengaitkan manipulasi DOM dengan event untuk membuat interaksi yang dinamis.
+
+Contoh Mengubah Elemen Saat Tombol Diklik:
+===============================================================================================================
+const button = document.querySelector("#myButton");
+button.addEventListener("click", () => {
+    const newItem = document.createElement("li");
+    newItem.textContent = "Item Baru Ditambahkan";
+    document.querySelector("#myList").appendChild(newItem);
+});
+===============================================================================================================
+
+### Langkah 90: Mengubah Atribut Elemen
+Kita bisa mengubah atribut elemen menggunakan metode `setAttribute()` atau properti langsung.
+
+Contoh Mengubah Atribut:
+===============================================================================================================
+const link = document.querySelector("a");
+link.setAttribute("href", "https://www.example.com"); // Mengubah atribut href
+link.textContent = "Kunjungi Example"; // Mengubah teks link
+===============================================================================================================
+
+### Latihan:
+1. Buatlah halaman web dengan daftar item dan tombol untuk menambahkan item baru ke daftar.
+2. Tambahkan fitur untuk menghapus item dari daftar ketika item tersebut diklik.
+3. Ubah gaya elemen di dalam halaman berdasarkan interaksi pengguna.
