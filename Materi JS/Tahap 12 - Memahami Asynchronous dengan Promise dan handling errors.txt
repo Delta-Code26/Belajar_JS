@@ -1,0 +1,112 @@
+JavaScript berjalan secara synchronous, artinya kode dijalankan satu per satu, tetapi sering kali kita perlu melakukan tugas yang berjalan di latar belakang, seperti mengambil data dari server atau menunggu pengguna melakukan tindakan. Asynchronous JavaScript memungkinkan kita menjalankan kode tanpa menunggu satu tugas selesai sepenuhnya.
+
+### Langkah 41: Memahami Promises
+Promise adalah objek yang mewakili penyelesaian (atau kegagalan) dari operasi asynchronous. Promise dapat berada dalam salah satu dari tiga status:
+- Pending: Promise sedang dalam proses.
+- Fulfilled: Promise telah berhasil diselesaikan.
+- Rejected: Promise mengalami kegagalan.
+
+Contoh Membuat dan Menggunakan Promise:
+```javascript
+let janji = new Promise((resolve, reject) => {
+    let sukses = true;
+
+    if (sukses) {
+        resolve("Janji terpenuhi!");
+    } else {
+        reject("Janji gagal.");
+    }
+});
+
+// Menggunakan then() dan catch() untuk menangani Promise
+janji
+    .then((pesan) => {
+        console.log(pesan); // Output jika sukses: "Janji terpenuhi!"
+    })
+    .catch((error) => {
+        console.error(error); // Output jika gagal: "Janji gagal."
+    });
+```
+
+### Langkah 42: Menggunakan Fetch API dengan Promises
+Kita sudah melihat contoh penggunaan Fetch API sebelumnya, dan Fetch juga mengembalikan Promise. Jadi kita bisa menggunakan `.then()` dan `.catch()` untuk menangani hasil dari Fetch.
+
+Contoh Penggunaan Fetch dengan Promise:
+```javascript
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+### Langkah 43: Async/Await
+Async/Await adalah cara yang lebih mudah dibaca dan ditulis untuk menangani kode asynchronous. `async` digunakan untuk mendeklarasikan fungsi asynchronous, dan `await` digunakan untuk menunggu Promise selesai.
+
+Contoh Penggunaan Async/Await:
+```javascript
+async function fetchData() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchData();
+```
+
+Dengan `async` dan `await`, kita bisa menghindari penggunaan `.then()` yang berulang, sehingga membuat kode lebih mudah dibaca dan dipelihara.
+
+### Langkah 44: Handling Errors dalam Asynchronous Code
+Error handling sangat penting dalam kode asynchronous. Saat menggunakan `async/await`, kita bisa menangani error menggunakan try...catch.
+
+Contoh Handling Error:
+```javascript
+async function fetchDataWithErrorHandling() {
+    try {
+        let response = await fetch('https://api.salahurl.com/data'); // URL salah untuk contoh error
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
+
+fetchDataWithErrorHandling();
+```
+
+Jika terjadi error, misalnya URL yang salah atau masalah jaringan, kode dalam `catch` akan menangani error tersebut.
+
+### Langkah 45: Menggunakan Promise.all
+Promise.all memungkinkan kita menjalankan beberapa promise secara bersamaan dan menunggu hingga semua promise selesai. Ini berguna jika kita ingin mengambil data dari beberapa sumber sekaligus.
+
+Contoh Penggunaan Promise.all:
+```javascript
+let request1 = fetch('https://jsonplaceholder.typicode.com/posts');
+let request2 = fetch('https://jsonplaceholder.typicode.com/users');
+
+Promise.all([request1, request2])
+    .then(async ([res1, res2]) => {
+        let data1 = await res1.json();
+        let data2 = await res2.json();
+        console.log('Posts:', data1);
+        console.log('Users:', data2);
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+```
+
+### Latihan:
+1. Buat fungsi asynchronous menggunakan Fetch API untuk mengambil data dari API publik dan tampilkan hasilnya di konsol.
+2. Coba tambahkan handling error menggunakan try-catch dan tampilkan pesan error jika ada masalah dengan request.
+3. Gunakan Promise.all untuk mengambil data dari dua API berbeda sekaligus dan tampilkan hasilnya.
