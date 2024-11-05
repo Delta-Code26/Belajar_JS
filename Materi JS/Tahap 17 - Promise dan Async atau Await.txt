@@ -1,0 +1,113 @@
+Kita lanjut ke **Tahap Ketujuh Belas**: Memahami **Promises dan Async/Await** lebih mendalam di JavaScript.
+
+Promises adalah cara untuk menangani operasi asynchronous di JavaScript, dan Async/Await adalah sintaks yang memungkinkan kita menulis kode asynchronous dengan cara yang lebih mirip dengan kode synchronous, membuatnya lebih mudah dibaca dan dikelola.
+
+### Langkah 66: Memahami Promises
+Promise adalah objek yang merepresentasikan penyelesaian (atau kegagalan) dari sebuah operasi asynchronous. Ada tiga status yang dimiliki Promise:
+
+- **Pending**: Status awal, ketika promise sedang menunggu untuk diselesaikan.
+- **Fulfilled**: Ketika operasi selesai dan berhasil.
+- **Rejected**: Ketika operasi selesai tetapi gagal.
+
+**Contoh Membuat Promise:**
+```javascript
+let myPromise = new Promise((resolve, reject) => {
+    let success = true; // Simulasikan operasi yang sukses
+    if (success) {
+        resolve("Operasi berhasil!");
+    } else {
+        reject("Operasi gagal!");
+    }
+});
+
+// Menangani Promise
+myPromise
+    .then(result => {
+        console.log(result); // Output: Operasi berhasil!
+    })
+    .catch(error => {
+        console.log(error); // Output: Operasi gagal!
+    });
+```
+
+### Langkah 67: Chaining Promises
+Kita bisa menghubungkan beberapa promise dengan menggunakan `then()` untuk menjalankan operasi secara berurutan.
+
+**Contoh Chaining Promises:**
+```javascript
+let promise1 = new Promise((resolve) => {
+    setTimeout(() => resolve("Hasil dari promise 1"), 1000);
+});
+
+let promise2 = new Promise((resolve) => {
+    setTimeout(() => resolve("Hasil dari promise 2"), 500);
+});
+
+// Menghubungkan promise
+promise1
+    .then(result1 => {
+        console.log(result1);
+        return promise2; // Kembalikan promise berikutnya
+    })
+    .then(result2 => {
+        console.log(result2);
+    });
+```
+
+### Langkah 68: Menggunakan Promise.all
+`Promise.all` digunakan untuk menunggu beberapa promise diselesaikan, dan akan memberikan array hasilnya.
+
+**Contoh Menggunakan Promise.all:**
+```javascript
+let promise1 = Promise.resolve("Hasil 1");
+let promise2 = new Promise((resolve) => setTimeout(() => resolve("Hasil 2"), 1000));
+let promise3 = new Promise((resolve) => setTimeout(() => resolve("Hasil 3"), 500));
+
+Promise.all([promise1, promise2, promise3])
+    .then(results => {
+        console.log(results); // Output: ["Hasil 1", "Hasil 2", "Hasil 3"]
+    })
+    .catch(error => {
+        console.error("Ada masalah:", error);
+    });
+```
+
+### Langkah 69: Menggunakan Async/Await
+**Async/Await** memungkinkan kita untuk menulis kode asynchronous dengan lebih jelas dan terstruktur. Sebuah fungsi yang dideklarasikan dengan kata kunci `async` selalu mengembalikan promise.
+
+**Contoh Menggunakan Async/Await:**
+```javascript
+async function fetchData() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        if (!response.ok) throw new Error("Gagal mengambil data");
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error("Ada masalah:", error);
+    }
+}
+
+fetchData();
+```
+
+### Langkah 70: Menggunakan Await di dalam Chaining
+Kita juga bisa menggunakan `await` di dalam chaining untuk membuat kode lebih rapi.
+
+**Contoh Menggunakan Await dalam Chaining:**
+```javascript
+async function processPromises() {
+    let result1 = await promise1;
+    console.log(result1);
+    
+    let result2 = await promise2;
+    console.log(result2);
+}
+
+processPromises();
+```
+
+### **Latihan:**
+1. Buatlah sebuah fungsi asynchronous yang mengambil data dari API dan menampilkan hasilnya.
+2. Buat beberapa promise dan gunakan `Promise.all` untuk menunggu hingga semuanya selesai, lalu tampilkan hasilnya.
+3. Coba buat fungsi yang menggunakan `async/await` untuk mengambil dan memproses data secara berurutan.

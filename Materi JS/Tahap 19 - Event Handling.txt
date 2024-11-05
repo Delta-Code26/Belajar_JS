@@ -1,0 +1,94 @@
+Event handling adalah cara kita merespons interaksi pengguna dengan elemen dalam halaman web, seperti klik, hover, dan input. JavaScript memungkinkan kita untuk mendengarkan dan menangani event dengan mudah.
+
+### Langkah 77: Menangani Event
+Untuk menangani event, kita perlu mengaitkan fungsi dengan event yang terjadi pada elemen tertentu. Kita bisa menggunakan metode `addEventListener()` untuk menambahkan event listener.
+
+### Langkah 78: Menambahkan Event Listener
+Contoh Menambahkan Event Listener untuk Click Event:
+==============================================================================================================
+// Mengambil elemen tombol
+const button = document.querySelector("#myButton");
+
+// Menambahkan event listener
+button.addEventListener("click", function() {
+    alert("Tombol telah diklik!");
+});
+==============================================================================================================
+
+### Langkah 79: Menggunakan Fungsi Arrow untuk Event Handling
+Kita bisa menggunakan fungsi arrow untuk mendefinisikan event handler dengan cara yang lebih ringkas.
+
+Contoh Menggunakan Fungsi Arrow:
+==============================================================================================================
+button.addEventListener("click", () => {
+    console.log("Tombol diklik!");
+});
+==============================================================================================================
+
+### Langkah 80: Menghapus Event Listener
+Jika kita tidak lagi ingin mendengarkan event tertentu, kita bisa menghapus event listener menggunakan `removeEventListener()`.
+
+Contoh Menghapus Event Listener:
+==============================================================================================================
+function handleClick() {
+    console.log("Tombol diklik!");
+}
+
+// Menambahkan event listener
+button.addEventListener("click", handleClick);
+
+// Menghapus event listener
+button.removeEventListener("click", handleClick);
+==============================================================================================================
+
+### Langkah 81: Menangani Beberapa Event
+Kita bisa menambahkan beberapa event listener untuk satu elemen atau menangani beberapa jenis event dengan cara yang berbeda.
+
+Contoh Menambahkan Beberapa Event Listener:
+==============================================================================================================
+button.addEventListener("mouseenter", () => {
+    console.log("Mouse masuk ke tombol!");
+});
+
+button.addEventListener("mouseleave", () => {
+    console.log("Mouse keluar dari tombol!");
+});
+==============================================================================================================
+
+### Langkah 82: Menggunakan Event Object
+Setiap event yang terjadi akan mengirimkan sebuah objek event yang berisi informasi tentang event tersebut. Kita bisa menggunakan objek ini untuk mendapatkan detail lebih lanjut.
+
+Contoh Menggunakan Event Object:
+==============================================================================================================
+button.addEventListener("click", (event) => {
+    console.log("Tombol diklik pada koordinat:", event.clientX, event.clientY);
+});
+==============================================================================================================
+
+### Langkah 83: Delegasi Event
+Delegasi event adalah teknik di mana kita menambahkan event listener ke elemen induk daripada elemen anak, memungkinkan kita untuk menangani event pada banyak elemen dengan satu listener.
+
+Contoh Delegasi Event:
+==============================================================================================================
+html
+<ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+</ul>
+
+<script>
+const list = document.getElementById("myList");
+
+list.addEventListener("click", (event) => {
+    if (event.target.tagName === "LI") {
+        alert(`Anda mengklik: ${event.target.textContent}`);
+    }
+});
+</script>
+==============================================================================================================
+
+### Latihan:
+1. Buatlah sebuah halaman web dengan beberapa tombol dan tambahkan event listener untuk menampilkan pesan saat tombol diklik.
+2. Gunakan delegasi event untuk menangani klik pada item dalam daftar.
+3. Buatlah interaksi yang lebih kompleks, seperti mengubah warna latar belakang halaman ketika mouse berada di atas tombol dan kembali ke warna semula ketika mouse keluar.

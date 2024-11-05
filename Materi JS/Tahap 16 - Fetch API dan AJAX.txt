@@ -1,0 +1,96 @@
+**Fetch API** adalah cara modern untuk melakukan permintaan HTTP di JavaScript, menggantikan XMLHttpRequest. Fetch API memungkinkan kita untuk mengambil data dari server secara asynchronous dan lebih mudah dibaca dibandingkan dengan AJAX tradisional.
+
+### Langkah 61: Menggunakan Fetch API
+**Fetch API** menggunakan `Promise`, sehingga kita bisa menggunakan `then()` untuk menangani hasilnya.
+
+**Contoh Penggunaan Fetch API untuk Mengambil Data:**
+==========================================================================================================================
+fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data); // Output data yang diambil
+    })
+    .catch(error => {
+        console.error('Ada masalah dengan pengambilan data:', error);
+    });
+==========================================================================================================================
+
+### Langkah 62: Melakukan POST Request dengan Fetch API
+Selain mengambil data, kita juga bisa mengirim data menggunakan POST request dengan Fetch API.
+
+**Contoh Melakukan POST Request:**
+==========================================================================================================================
+fetch('https://jsonplaceholder.typicode.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        title: 'Judul Baru',
+        body: 'Ini adalah konten baru',
+        userId: 1
+    })
+})
+.then(response => response.json())
+.then(data => {
+    console.log('Data baru yang ditambahkan:', data);
+})
+.catch(error => {
+    console.error('Ada masalah dengan pengiriman data:', error);
+});
+==========================================================================================================================
+
+### Langkah 63: Menggunakan Async/Await dengan Fetch
+Kita bisa mengkombinasikan Fetch API dengan `async/await` untuk membuat kode lebih bersih dan mudah dibaca.
+
+**Contoh Menggunakan Async/Await dengan Fetch:**
+==========================================================================================================================
+async function fetchPosts() {
+    try {
+        let response = await fetch('https://jsonplaceholder.typicode.com/posts');
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        let data = await response.json();
+        console.log(data);
+    } catch (error) {
+        console.error('Ada masalah dengan pengambilan data:', error);
+    }
+}
+
+fetchPosts();
+==========================================================================================================================
+
+### Langkah 64: Mengatur Headers dan Menggunakan Query Parameters
+Kita bisa mengatur headers dan menambahkan parameter kueri ke URL saat melakukan permintaan.
+
+**Contoh Mengatur Headers dan Menambahkan Query Parameters:**
+==========================================================================================================================
+let userId = 1; // Misalkan kita ingin mengambil post untuk userId 1
+fetch(`https://jsonplaceholder.typicode.com/posts?userId=${userId}`, {
+    method: 'GET',
+    headers: {
+        'Accept': 'application/json'
+    }
+})
+.then(response => response.json())
+.then(data => {
+    console.log(data);
+})
+.catch(error => {
+    console.error('Ada masalah dengan pengambilan data:', error);
+});
+==========================================================================================================================
+
+### Langkah 65: Menangani Error dalam Fetch API
+Kita harus selalu memeriksa apakah response yang diterima dari server valid. Gunakan `response.ok` untuk mengecek apakah response sukses (status 200–299).
+
+### **Latihan:**
+1. Buat halaman web yang mengambil daftar pengguna dari API (seperti `https://jsonplaceholder.typicode.com/users`) dan menampilkannya dalam daftar.
+2. Tambahkan formulir untuk mengirim data pengguna baru ke API menggunakan POST request.
+3. Gunakan Async/Await untuk mengambil data dari API dan menampilkannya di halaman.

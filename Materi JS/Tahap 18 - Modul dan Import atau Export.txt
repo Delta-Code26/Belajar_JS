@@ -1,0 +1,89 @@
+Dengan perkembangan JavaScript, kita sekarang bisa menggunakan modul untuk membagi kode menjadi file terpisah dan lebih terorganisir. Ini membantu dalam pemeliharaan kode dan penggunaan kembali.
+
+### Langkah 71: Memahami Modul
+Modul di JavaScript adalah file yang dapat diekspor dan diimpor di antara satu sama lain. Dengan menggunakan modul, kita bisa mengorganisir kode kita dengan lebih baik.
+
+### Langkah 72: Menyiapkan Modul
+Untuk membuat modul, kita cukup membuat file JavaScript baru. Misalnya, kita bisa membuat file `math.js` yang berisi beberapa fungsi matematika.
+
+**Contoh `math.js`:**
+==============================================================================================================
+// Mendefinisikan fungsi
+export function tambah(a, b) {
+    return a + b;
+}
+
+export function kurang(a, b) {
+    return a - b;
+}
+
+// Kita juga bisa mengekspor beberapa variabel
+export const PI = 3.14;
+==============================================================================================================
+
+### Langkah 73: Mengimpor Modul
+Setelah kita mengekspor fungsi atau variabel dari modul, kita bisa mengimpornya ke dalam file lain menggunakan kata kunci `import`.
+
+**Contoh Mengimpor Modul di File Lain:**
+==============================================================================================================
+import { tambah, kurang, PI } from './math.js';
+
+console.log(tambah(5, 3)); // Output: 8
+console.log(kurang(10, 4)); // Output: 6
+console.log(PI); // Output: 3.14
+==============================================================================================================
+
+### Langkah 74: Ekspor Default
+Kita juga bisa mengekspor satu item sebagai ekspor default dari sebuah modul. Ini memudahkan pengimporan, karena kita tidak perlu menggunakan kurung kurawal.
+
+**Contoh Ekspor Default:**
+==============================================================================================================
+// Menggunakan ekspor default
+export default function kali(a, b) {
+    return a * b;
+}
+==============================================================================================================
+
+**Mengimpor Ekspor Default:**
+==============================================================================================================
+import kali from './math.js';
+
+console.log(kali(4, 5)); // Output: 20
+==============================================================================================================
+
+### Langkah 75: Mengimpor Semua dari Modul
+Kita bisa mengimpor semua ekspor dari sebuah modul ke dalam satu objek menggunakan `* as`.
+
+**Contoh Mengimpor Semua:**
+==============================================================================================================
+import * as math from './math.js';
+
+console.log(math.tambah(2, 3)); // Output: 5
+console.log(math.kurang(5, 2)); // Output: 3
+console.log(math.PI); // Output: 3.14
+==============================================================================================================
+
+### Langkah 76: Menggunakan Modul di Browser
+Untuk menggunakan modul di browser, kita perlu memastikan bahwa kita menambahkan atribut `type="module"` pada tag `<script>` di HTML.
+
+**Contoh Menggunakan Modul di HTML:**
+==============================================================================================================html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contoh Modul</title>
+</head>
+<body>
+    <script type="module">
+        import { tambah } from './math.js';
+        console.log(tambah(2, 2)); // Output: 4
+    </script>
+</body>
+</html>
+==============================================================================================================
+
+### **Latihan:**
+1. Buatlah modul dengan beberapa fungsi matematis, kemudian impor dan gunakan fungsi-fungsi tersebut di file lain.
+2. Coba buat ekspor default dan impor di file yang berbeda.
+3. Gunakan ekspor dan impor untuk mengorganisir kode dalam proyek kecil.
