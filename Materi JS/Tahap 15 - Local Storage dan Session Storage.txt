@@ -1,0 +1,106 @@
+Local Storage dan Session Storage adalah bagian dari Web Storage API yang memungkinkan kita untuk menyimpan data di browser. Keduanya menyediakan penyimpanan kunci-nilai yang mudah digunakan untuk menyimpan data sementara atau permanen.
+
+### Langkah 56: Memahami Local Storage
+Local Storage memungkinkan kita menyimpan data di browser tanpa batas waktu. Data yang disimpan dalam Local Storage akan tetap ada meskipun pengguna menutup tab atau browser, dan juga saat halaman di-refresh.
+
+Menyimpan Data di Local Storage:
+==========================================================================================================================
+localStorage.setItem("username", "Delta-Code26");
+==========================================================================================================================
+
+Mengambil Data dari Local Storage:
+==========================================================================================================================
+let username = localStorage.getItem("username");
+console.log(username); // Output: Delta-Code26
+==========================================================================================================================
+
+Menghapus Data dari Local Storage:
+==========================================================================================================================
+localStorage.removeItem("username");
+==========================================================================================================================
+
+Menghapus Semua Data di Local Storage:
+==========================================================================================================================
+localStorage.clear();
+==========================================================================================================================
+
+### Langkah 57: Memahami Session Storage
+Session Storage juga memungkinkan kita menyimpan data di browser, tetapi data ini hanya akan bertahan selama sesi halaman tersebut. Jika pengguna menutup tab atau browser, data akan hilang.
+
+Menyimpan Data di Session Storage:
+==========================================================================================================================
+sessionStorage.setItem("sessionID", "12345");
+==========================================================================================================================
+
+Mengambil Data dari Session Storage:
+==========================================================================================================================
+let sessionID = sessionStorage.getItem("sessionID");
+console.log(sessionID); // Output: 12345
+==========================================================================================================================
+
+Menghapus Data dari Session Storage:
+==========================================================================================================================
+sessionStorage.removeItem("sessionID");
+==========================================================================================================================
+
+Menghapus Semua Data di Session Storage:
+==========================================================================================================================
+sessionStorage.clear();
+==========================================================================================================================
+
+### Langkah 58: Memahami Perbedaan antara Local Storage dan Session Storage
+- Local Storage:
+  - Data disimpan secara permanen hingga dihapus.
+  - Kapasitas penyimpanan biasanya lebih besar (biasanya sekitar 5-10MB).
+  
+- Session Storage:
+  - Data hanya disimpan selama sesi aktif (ditutup tab atau browser, data akan hilang).
+  - Kapasitas penyimpanan juga mirip dengan Local Storage.
+
+### Langkah 59: Contoh Menggunakan Local Storage
+Kita bisa menggunakan Local Storage untuk menyimpan preferensi pengguna, seperti tema gelap atau terang, atau menyimpan data formulir saat pengguna mengisi tetapi belum mengirim.
+
+Contoh Menyimpan Preferensi Tema:
+==========================================================================================================================
+function setTheme(theme) {
+    localStorage.setItem("theme", theme);
+    document.body.className = theme; // Mengubah tema
+}
+
+function applyTheme() {
+    let theme = localStorage.getItem("theme");
+    if (theme) {
+        document.body.className = theme; // Terapkan tema saat memuat halaman
+    }
+}
+
+// Panggil applyTheme saat halaman dimuat
+applyTheme();
+==========================================================================================================================
+
+### Langkah 60: Contoh Menggunakan Session Storage
+Kita bisa menggunakan Session Storage untuk menyimpan data sementara, misalnya ketika pengguna mengisi formulir dan kita ingin mempertahankan data tersebut jika terjadi refresh.
+
+Contoh Menyimpan Data Formulir:
+==========================================================================================================================
+let form = document.querySelector("#myForm");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    let inputValue = document.querySelector("#myInput").value;
+    sessionStorage.setItem("inputValue", inputValue);
+    console.log("Form disubmit dengan input: ", inputValue);
+});
+
+// Memuat nilai input dari sessionStorage saat halaman dimuat
+window.onload = () => {
+    let savedValue = sessionStorage.getItem("inputValue");
+    if (savedValue) {
+        document.querySelector("#myInput").value = savedValue;
+    }
+};
+==========================================================================================================================
+
+### Latihan:
+1. Buatlah halaman yang menyimpan nama pengguna di Local Storage dan menampilkannya ketika halaman dimuat.
+2. Buatlah formulir dengan input teks yang menyimpan nilai di Session Storage, sehingga nilai tersebut tetap ada meskipun halaman di-refresh.

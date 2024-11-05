@@ -1,0 +1,78 @@
+Event handling adalah proses menanggapi tindakan atau peristiwa yang terjadi di halaman web, seperti klik tombol, perubahan teks, atau gerakan mouse. Dengan event handling, kita bisa membuat halaman web lebih interaktif.
+
+### Langkah 51: Menangani Event dengan addEventListener
+**`addEventListener`** adalah metode yang digunakan untuk mendaftarkan event ke elemen HTML. Ini memungkinkan kita untuk menambahkan event handler (fungsi yang berjalan ketika event terjadi) ke elemen.
+
+**Contoh Dasar Menggunakan addEventListener:**
+==========================================================================================================================
+let button = document.querySelector("#myButton");
+
+button.addEventListener("click", function() {
+    console.log("Tombol diklik!");
+});
+==========================================================================================================================
+
+Pada contoh di atas, kita menambahkan event listener untuk event `"click"` pada tombol dengan ID `myButton`. Ketika tombol diklik, fungsi dalam `addEventListener` akan dijalankan.
+
+### Langkah 52: Menangani Beberapa Event
+Kita bisa menambahkan beberapa event ke elemen yang sama. Misalnya, menambahkan event `mouseover` untuk merespons ketika mouse berada di atas elemen.
+
+**Contoh Menggunakan Event `click` dan `mouseover`:**
+==========================================================================================================================
+let button = document.querySelector("#myButton");
+
+button.addEventListener("click", () => {
+    console.log("Tombol diklik!");
+});
+
+button.addEventListener("mouseover", () => {
+    console.log("Mouse berada di atas tombol.");
+});
+==========================================================================================================================
+
+### Langkah 53: Event Parameters dan `event` Object
+Saat event terjadi, JavaScript otomatis menyediakan objek `event` yang berisi informasi tentang event tersebut, seperti posisi mouse, tombol yang diklik, atau nilai input.
+
+**Contoh Menggunakan Objek `event`:**
+==========================================================================================================================
+let inputField = document.querySelector("#myInput");
+
+inputField.addEventListener("keydown", (event) => {
+    console.log(`Tombol yang ditekan: ${event.key}`);
+});
+==========================================================================================================================
+
+Pada contoh di atas, `event.key` akan mencetak nama tombol yang ditekan, seperti "a", "Enter", atau "Backspace".
+
+### Langkah 54: Menghentikan Event dengan `event.preventDefault()`
+`event.preventDefault()` digunakan untuk menghentikan perilaku default dari event, seperti mencegah pengiriman form atau menghentikan tautan untuk membuka halaman baru.
+
+**Contoh Menghentikan Pengiriman Form:**
+==========================================================================================================================
+let form = document.querySelector("#myForm");
+
+form.addEventListener("submit", (event) => {
+    event.preventDefault(); // Mencegah form terkirim
+    console.log("Form tidak terkirim!");
+});
+==========================================================================================================================
+
+### Langkah 55: Menambahkan Event Inline (Alternatif, namun Kurang Direkomendasikan)
+Selain menggunakan `addEventListener`, kita juga bisa menambahkan event langsung di elemen HTML. Meskipun ini cara cepat, metode ini kurang fleksibel dan bisa membuat kode sulit dibaca pada proyek besar.
+
+**Contoh Event Inline:**
+==========================================================================================================================
+html
+<button onclick="klikTombol()">Klik Saya!</button>
+
+<script>
+    function klikTombol() {
+        console.log("Tombol diklik!");
+    }
+</script>
+==========================================================================================================================
+
+### **Latihan:**
+1. Tambahkan tombol di HTML, lalu gunakan `addEventListener` untuk menampilkan pesan di konsol ketika tombol diklik.
+2. Buat form sederhana dengan input teks dan tombol submit. Gunakan `event.preventDefault()` untuk mencegah pengiriman form.
+3. Tambahkan event `mouseover` dan `mouseout` pada elemen gambar untuk mengubah teks ketika mouse berada di atas dan keluar dari gambar.

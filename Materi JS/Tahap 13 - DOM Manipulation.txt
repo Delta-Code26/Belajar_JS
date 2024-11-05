@@ -1,0 +1,94 @@
+DOM adalah representasi dari struktur halaman web dalam bentuk pohon (tree structure). Dengan JavaScript, kita bisa mengakses dan memanipulasi elemen-elemen HTML melalui DOM untuk membuat halaman lebih dinamis.
+
+### Langkah 46: Mengakses Elemen DOM
+Ada beberapa cara untuk mengakses elemen di DOM menggunakan JavaScript:
+
+1. getElementById – Mengambil elemen berdasarkan ID.
+    ====================================================================================
+    let header = document.getElementById("header");
+    console.log(header);
+    ====================================================================================
+
+2. getElementsByClassName – Mengambil elemen berdasarkan kelas (class).
+    ====================================================================================
+    let items = document.getElementsByClassName("item");
+    console.log(items);
+    ====================================================================================
+
+3. getElementsByTagName – Mengambil elemen berdasarkan tag.
+    ====================================================================================
+    let paragraphs = document.getElementsByTagName("p");
+    console.log(paragraphs);
+    ====================================================================================
+
+4. querySelector – Mengambil elemen pertama yang cocok dengan selektor CSS.
+    ====================================================================================
+    let item = document.querySelector(".item");
+    console.log(item);
+    ====================================================================================
+
+5. querySelectorAll – Mengambil semua elemen yang cocok dengan selektor CSS.
+    ====================================================================================
+    let items = document.querySelectorAll(".item");
+    console.log(items);
+    ====================================================================================
+
+### Langkah 47: Memanipulasi Konten Elemen
+Setelah elemen diambil, kita bisa memanipulasi kontennya.
+
+Mengubah Teks di Elemen:
+====================================================================================
+let header = document.getElementById("header");
+header.textContent = "Hello, DOM!";
+====================================================================================
+
+Mengubah HTML di Elemen:
+====================================================================================
+let content = document.querySelector(".content");
+content.innerHTML = "<strong>Updated Content</strong>";
+====================================================================================
+
+### Langkah 48: Mengubah Gaya Elemen
+Kita juga bisa mengubah gaya (CSS) elemen menggunakan `style`.
+
+Mengubah Warna dan Ukuran Font:
+====================================================================================
+let header = document.getElementById("header");
+header.style.color = "blue";
+header.style.fontSize = "24px";
+====================================================================================
+
+### Langkah 49: Menambahkan dan Menghapus Kelas
+Kita bisa menambahkan atau menghapus kelas CSS di elemen menggunakan `classList`.
+
+Menambahkan Kelas:
+====================================================================================
+let item = document.querySelector(".item");
+item.classList.add("highlight");
+====================================================================================
+
+Menghapus Kelas:
+====================================================================================
+item.classList.remove("highlight");
+====================================================================================
+
+### Langkah 50: Menambahkan dan Menghapus Elemen DOM
+Kita bisa membuat elemen baru dan menambahkannya ke dalam DOM, atau menghapus elemen yang sudah ada.
+
+Menambahkan Elemen Baru:
+====================================================================================
+let newItem = document.createElement("li");
+newItem.textContent = "Item Baru";
+document.querySelector(".list").appendChild(newItem);
+====================================================================================
+
+Menghapus Elemen:
+====================================================================================
+let itemToRemove = document.querySelector(".item");
+itemToRemove.remove();
+====================================================================================
+
+### Latihan:
+1. Buat elemen `<button>` di HTML, lalu akses dan ubah teks tombol tersebut menggunakan JavaScript.
+2. Coba tambahkan kelas baru ke elemen `<p>` dan ubah gaya font-nya.
+3. Buat elemen `<li>` baru, tambahkan ke dalam daftar `<ul>`, dan ubah gaya elemen tersebut.
