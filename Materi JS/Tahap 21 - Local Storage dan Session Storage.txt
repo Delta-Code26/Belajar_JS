@@ -1,9 +1,9 @@
 Local Storage dan Session Storage adalah bagian dari Web Storage API yang memungkinkan kita untuk menyimpan data di browser. Data yang disimpan bersifat persisten (untuk Local Storage) atau sementara (untuk Session Storage).
 
-### Langkah 91: Memahami Local Storage
+==> Langkah 91: Memahami Local Storage
 Local Storage memungkinkan kita untuk menyimpan data secara permanen dalam browser. Data yang disimpan akan tetap ada meskipun halaman dimuat ulang atau browser ditutup.
 
-### Menyimpan Data di Local Storage
+==> Menyimpan Data di Local Storage
 Untuk menyimpan data ke Local Storage, kita menggunakan metode `setItem()`, di mana kita memberikan kunci dan nilai.
 
 Contoh Menyimpan Data:
@@ -12,7 +12,7 @@ localStorage.setItem("nama", "John Doe"); // Menyimpan nama
 localStorage.setItem("umur", 30); // Menyimpan umur
 ==============================================================================================================
 
-### Mengambil Data dari Local Storage
+==> Mengambil Data dari Local Storage
 Untuk mengambil data dari Local Storage, kita menggunakan metode `getItem()`.
 
 Contoh Mengambil Data:
@@ -24,7 +24,7 @@ console.log(nama); // Output: John Doe
 console.log(umur); // Output: 30
 ==============================================================================================================
 
-### Menghapus Data dari Local Storage
+==> Menghapus Data dari Local Storage
 Kita bisa menghapus data tertentu dari Local Storage menggunakan metode `removeItem()` atau menghapus semua data dengan `clear()`.
 
 Contoh Menghapus Data:
@@ -33,10 +33,10 @@ localStorage.removeItem("nama"); // Menghapus data nama
 localStorage.clear(); // Menghapus semua data
 ==============================================================================================================
 
-### Langkah 92: Memahami Session Storage
+==> Langkah 92: Memahami Session Storage
 Session Storage mirip dengan Local Storage, tetapi data yang disimpan hanya bertahan selama sesi tab browser saat ini. Jika tab ditutup, data akan hilang.
 
-### Menyimpan Data di Session Storage
+==> Menyimpan Data di Session Storage
 Kita menyimpan data ke Session Storage dengan cara yang sama seperti Local Storage.
 
 Contoh Menyimpan Data:
@@ -44,7 +44,7 @@ Contoh Menyimpan Data:
 sessionStorage.setItem("sessionNama", "Jane Doe"); // Menyimpan nama sesi
 ==============================================================================================================
 
-### Mengambil Data dari Session Storage
+==> Mengambil Data dari Session Storage
 Untuk mengambil data dari Session Storage, kita menggunakan metode `getItem()`.
 
 Contoh Mengambil Data:
@@ -53,7 +53,7 @@ const sessionNama = sessionStorage.getItem("sessionNama");
 console.log(sessionNama); // Output: Jane Doe
 ==============================================================================================================
 
-### Menghapus Data dari Session Storage
+==> Menghapus Data dari Session Storage
 Kita bisa menghapus data tertentu dari Session Storage menggunakan metode `removeItem()` atau menghapus semua data dengan `clear()`.
 
 Contoh Menghapus Data:
@@ -62,11 +62,11 @@ sessionStorage.removeItem("sessionNama"); // Menghapus data sesi
 sessionStorage.clear(); // Menghapus semua data sesi
 ==============================================================================================================
 
-### Langkah 93: Perbedaan antara Local Storage dan Session Storage
+==> Langkah 93: Perbedaan antara Local Storage dan Session Storage
 - Local Storage: Data bertahan tanpa batas waktu, bahkan setelah browser ditutup.
 - Session Storage: Data hanya bertahan selama sesi tab browser terbuka.
 
-### Langkah 94: Menggunakan Local Storage untuk Menyimpan Data Pengguna
+==> Langkah 94: Menggunakan Local Storage untuk Menyimpan Data Pengguna
 Kita bisa menggunakan Local Storage untuk menyimpan informasi pengguna, seperti preferensi tema atau data form.
 
 Contoh Menyimpan Preferensi Tema:
@@ -75,7 +75,7 @@ const tema = "gelap"; // Misalnya pengguna memilih tema gelap
 localStorage.setItem("preferensiTema", tema);
 ==============================================================================================================
 
-### Langkah 95: Mengambil dan Menggunakan Data dari Storage
+==> Langkah 95: Mengambil dan Menggunakan Data dari Storage
 Kita bisa mengambil data dari Local Storage dan menggunakannya saat memuat halaman.
 
 Contoh Menggunakan Data untuk Mengubah Tema:
@@ -86,7 +86,7 @@ if (preferensiTema) {
 }
 ==============================================================================================================
 
-### Latihan:
+==> Latihan:
 1. Buatlah form sederhana yang memungkinkan pengguna untuk memasukkan nama dan umur, dan simpan data tersebut ke Local Storage.
 2. Ketika halaman dimuat, ambil data dari Local Storage dan tampilkan di halaman.
 3. Tambahkan tombol untuk menghapus data dari Local Storage.
