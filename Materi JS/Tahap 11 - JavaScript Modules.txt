@@ -1,5 +1,3 @@
-Baik, kita masuk ke **Tahap Kesebelas**: Memahami **JavaScript Modules**.
-
 JavaScript Modules adalah cara untuk mengelompokkan kode ke dalam file-file terpisah sehingga kode menjadi lebih terstruktur, mudah dibaca, dan dikelola. Dengan modules, kita bisa membagi fungsi, variabel, atau kelas ke dalam file terpisah dan mengimpornya ke file lain sesuai kebutuhan.
 
 ### Langkah 36: Membuat dan Mengekspor Module
@@ -9,8 +7,8 @@ Misalnya, kita punya dua file:
 - `math.js`: Berisi fungsi untuk operasi matematika.
 - `main.js`: File utama yang mengimpor fungsi dari `math.js`.
 
-**Contoh di `math.js`:**
-```javascript
+Contoh di `math.js`:
+javascript
 // Fungsi untuk dijadikan module
 export function tambah(a, b) {
     return a + b;
@@ -19,48 +17,48 @@ export function tambah(a, b) {
 export function kali(a, b) {
     return a * b;
 }
-```
+
 
 Di sini, kita menggunakan `export` di depan fungsi `tambah` dan `kali` untuk menjadikannya module yang dapat diimpor di file lain.
 
 ### Langkah 37: Mengimpor Module
 Untuk menggunakan fungsi yang diekspor dari `math.js`, kita bisa mengimpornya di file lain seperti `main.js`.
 
-**Contoh di `main.js`:**
-```javascript
+Contoh di `main.js`:
+javascript
 import { tambah, kali } from './math.js';
 
 console.log(tambah(2, 3)); // Output: 5
 console.log(kali(4, 5));   // Output: 20
-```
+
 
 Dengan cara ini, kita dapat menggunakan fungsi `tambah` dan `kali` dari `math.js` di file `main.js`.
 
 ### Langkah 38: Export Default
-Kita juga bisa menggunakan **export default** untuk mengekspor satu nilai atau fungsi utama dari file. Ini memungkinkan kita mengimpor tanpa menggunakan nama yang spesifik.
+Kita juga bisa menggunakan export default untuk mengekspor satu nilai atau fungsi utama dari file. Ini memungkinkan kita mengimpor tanpa menggunakan nama yang spesifik.
 
-**Contoh `math.js` dengan Export Default:**
-```javascript
+Contoh `math.js` dengan Export Default:
+javascript
 // Menambahkan export default untuk fungsi kali
 export default function kali(a, b) {
     return a * b;
 }
-```
 
-**Contoh Mengimpor dengan Export Default di `main.js`:**
-```javascript
+
+Contoh Mengimpor dengan Export Default di `main.js`:
+javascript
 import kali from './math.js';
 
 console.log(kali(4, 5)); // Output: 20
-```
+
 
 Kita bisa mengimpor `kali` langsung tanpa harus menggunakan `{ }`, karena `kali` adalah fungsi utama dari file `math.js`.
 
 ### Langkah 39: Module dan Organisasi Proyek
 Modularisasi sangat berguna untuk proyek besar yang memiliki banyak fungsi atau komponen. Dengan memecah kode ke dalam beberapa module, kita bisa mengorganisasi proyek dengan lebih baik dan hanya mengimpor bagian yang diperlukan ke setiap file.
 
-**Contoh Struktur Proyek Modular:**
-```
+Contoh Struktur Proyek Modular:
+
 myApp/
 │
 ├── index.html
@@ -73,17 +71,17 @@ myApp/
 └── components/
     ├── header.js
     └── footer.js
-```
+
 
 Pada proyek di atas:
-- **`modules`** berisi file `math.js` dan `helper.js`, yang berisi fungsi atau helper umum.
-- **`components`** berisi `header.js` dan `footer.js` untuk mengelola komponen halaman.
+- `modules` berisi file `math.js` dan `helper.js`, yang berisi fungsi atau helper umum.
+- `components` berisi `header.js` dan `footer.js` untuk mengelola komponen halaman.
 
 ### Langkah 40: Menggunakan Modules di Browser
 Pastikan Anda menambahkan `type="module"` dalam tag `<script>` untuk menggunakan module di browser:
 
-**Contoh di `index.html`:**
-```html
+Contoh di `index.html`:
+html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,8 +93,8 @@ Pastikan Anda menambahkan `type="module"` dalam tag `<script>` untuk menggunakan
     <script type="module" src="main.js"></script>
 </body>
 </html>
-```
 
-### **Latihan:**
+
+### Latihan:
 1. Buat file `math.js` yang berisi fungsi `tambah` dan `kurang`. Gunakan `import` untuk memanggil fungsi tersebut di file lain, lalu cetak hasilnya.
 2. Tambahkan satu `export default` untuk fungsi utama di file lain, dan coba impornya di file utama.
